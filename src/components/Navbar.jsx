@@ -26,7 +26,7 @@ const Navbar = () => {
     <div className="fixed w-full z-10  ">
       <nav className="px-5 py-2 flex items-center justify-between font-medium shadow bg-white dark:bg-[#0A0A0A] dark:border-b">
         <div className="flex items-center gap-1 ">
-          <img src={logo} className="h-12" alt="" />
+          <img src={logo} className="h-12 md:h-14" alt="" />
           <h1 className=" text-[26px]">CloudNotes</h1>
         </div>
 
