@@ -50,7 +50,7 @@ const Signup = () => {
         className="border rounded-md w-[400px] p-10 shadow"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-2xl mb-6">Create an account to use iNotebook</h1>
+        <h1 className="text-2xl mb-6">Create an account to use eNotebook</h1>
         <div className="grid gap-1 mb-3">
           <Label htmlFor="name">Name</Label>
           <Input

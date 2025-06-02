@@ -44,7 +44,7 @@ const Login = () => {
         className="border rounded-md w-[400px] p-10 shadow"
         onSubmit={handleSubmit}
       >
-        <h1 className="text-2xl mb-6">Login to continue to iNotebook</h1>
+        <h1 className="text-2xl mb-6">Login to continue to eNotebook</h1>
         <div className="grid gap-1 mb-3">
           <Label htmlFor="email">Email</Label>
           <Input

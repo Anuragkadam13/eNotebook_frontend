@@ -25,7 +25,7 @@ const Navbar = () => {
     <div className="fixed w-full z-10  ">
       <nav className="px-5 py-4 flex items-center justify-between font-medium shadow bg-white dark:bg-[#0A0A0A] dark:border-b">
         <div className="flex items-center gap-4 ">
-          <h1 className=" text-[26px]  ">e-Notebook</h1>
+          <h1 className=" text-[26px]  ">eNotebook</h1>
         </div>
 
         {localStorage.getItem("token") ? (
