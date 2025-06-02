@@ -12,16 +12,19 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     //API Call
-    const response = await fetch("http://127.0.0.1:5000/api/auth/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: credentials.email,
-        password: credentials.password,
-      }),
-    });
+    const response = await fetch(
+      "https://e-notebook-backend-virid.vercel.app/api/auth/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: credentials.email,
+          password: credentials.password,
+        }),
+      }
+    );
     const json = await response.json();
     if (json.success) {
       //Save the auth token and redirect
