@@ -8,6 +8,11 @@ import { toast } from "sonner";
 const Login = () => {
   const [credentials, setcredentials] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
