@@ -143,7 +143,7 @@ const Notes = () => {
       </Dialog>
       <div className="flex flex-wrap">
         {notes.length == 0 ? (
-          <div className=" mt-10 w-full justify-center items-center flex gap-5 flex-col">
+          <div className=" my-10 w-full justify-center items-center flex gap-5 flex-col">
             {theme == "light" ? (
               <img
                 src={light}
