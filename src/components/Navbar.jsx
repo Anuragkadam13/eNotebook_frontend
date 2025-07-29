@@ -40,7 +40,7 @@ const Navbar = () => {
                   <X className="w-fit h-7" />
                 )}
               </PopoverTrigger>
-              <PopoverContent>
+              <PopoverContent className="z-100">
                 <div className="w-full ">
                   <About />
                   <ModeToggle />
