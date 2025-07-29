@@ -17,7 +17,7 @@ function App() {
           <NoteState>
             <Navbar />
             <Loader />
-            <div className="px-5 pt-20 sm:pb-0 pb-10">
+            <div className="px-5 pt-20 sm:pb-0 pb-15">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
