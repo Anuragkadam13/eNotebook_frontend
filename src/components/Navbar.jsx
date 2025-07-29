@@ -42,10 +42,10 @@ const Navbar = () => {
               </PopoverTrigger>
               <PopoverContent className="z-100">
                 <div className="w-full ">
-                  <About />
-                  <ModeToggle />
+                  <About className="z-100" />
+                  <ModeToggle className="z-100" />
                   <Button
-                    className="hover:cursor-pointer w-full justify-start "
+                    className="hover:cursor-pointer w-full justify-start z-100"
                     variant="ghost"
                     onClick={handleLogout}
                   >
