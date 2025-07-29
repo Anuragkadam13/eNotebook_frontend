@@ -24,7 +24,7 @@ const Home = () => {
       <Dialog>
         <div className="flex justify-center">
           <DialogTrigger
-            className="w-fit h-12 sm:h-14 fixed bottom-2.5 sm:bottom-5 right-5"
+            className="w-fit h-12 sm:h-14 fixed bottom-2.5 sm:bottom-5 sm:right-5 right-1/2"
             asChild
           >
             <BsFillPlusSquareFill className="hover:cursor-pointer" />
