@@ -32,8 +32,8 @@ const Notes = () => {
   const { showLoading, hideLoading, isLoading } = loadContext;
   useEffect(() => {
     const loadNotes = async () => {
+      showLoading();
       try {
-        showLoading();
         if (localStorage.getItem("token")) {
           await fetchallNotes();
         } else {

@@ -11,8 +11,8 @@ import LoaderState from "./context/Loader/LoaderState";
 function App() {
   return (
     <>
-      <LoaderState>
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <LoaderState>
           <NoteState>
             <Navbar />
             <div className="px-5 pt-20">
@@ -24,8 +24,8 @@ function App() {
               </Routes>
             </div>
           </NoteState>
-        </ThemeProvider>
-      </LoaderState>
+        </LoaderState>
+      </ThemeProvider>
     </>
   );
 }
