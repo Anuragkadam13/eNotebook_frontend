@@ -23,9 +23,9 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    showLoading();
 
     try {
+      showLoading();
       //API Call
       const response = await fetch(
         "https://e-notebook-backend-virid.vercel.app/api/auth/createUser",
