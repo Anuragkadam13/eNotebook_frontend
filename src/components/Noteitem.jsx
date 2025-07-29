@@ -47,10 +47,10 @@ const Noteitem = (props) => {
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                   <AlertDialogDescription>
                     This action cannot be undone. This will permanently delete
-                    your note and remove your data from our database.
+                    your note.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
