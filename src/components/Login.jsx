@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { toast } from "sonner";
+import LoadingContext from "@/context/Loader/LoadingContext";
 
 const Login = () => {
   const [credentials, setcredentials] = useState({ email: "", password: "" });
+  const loadContext = useContext(LoadingContext);
+  const { showLoading, hideLoading, isLoading } = loadContext;
   const navigate = useNavigate();
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -16,28 +19,37 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //API Call
-    const response = await fetch(
-      "https://e-notebook-backend-virid.vercel.app/api/auth/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: credentials.email,
-          password: credentials.password,
-        }),
+    showLoading();
+
+    try {
+      //API Call
+      const response = await fetch(
+        "https://e-notebook-backend-virid.vercel.app/api/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: credentials.email,
+            password: credentials.password,
+          }),
+        }
+      );
+      const json = await response.json();
+      if (json.success) {
+        //Save the auth token and redirect
+        localStorage.setItem("token", json.authToken);
+        navigate("/");
+        toast.success("Logged In Successfully");
+      } else {
+        toast.error("Invalid Credentials");
       }
-    );
-    const json = await response.json();
-    if (json.success) {
-      //Save the auth token and redirect
-      localStorage.setItem("token", json.authToken);
-      toast.success("Logged In Successfully");
-      navigate("/");
-    } else {
-      toast.error("Invalid Credentials");
+    } catch (error) {
+      console.error("Login failed:", error);
+      toast.error("Login failed. Please check your network connection.");
+    } finally {
+      hideLoading();
     }
   };
   const onChange = (e) => {

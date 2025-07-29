@@ -21,19 +21,36 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { useTheme } from "@/components/theme-provider";
+import LoadingContext from "@/context/Loader/LoadingContext";
 
 const Notes = () => {
   const { theme } = useTheme();
   let navigate = useNavigate();
   const context = useContext(noteContext);
   const { notes, fetchallNotes, editNote } = context;
+  const loadContext = useContext(LoadingContext);
+  const { showLoading, hideLoading, isLoading } = loadContext;
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      fetchallNotes();
-    } else {
-      navigate("/login");
-    }
+    const loadNotes = async () => {
+      showLoading();
+      try {
+        if (localStorage.getItem("token")) {
+          await fetchallNotes();
+        } else {
+          hideLoading();
+          navigate("/login");
+          return;
+        }
+      } catch (error) {
+        console.error("Error loading dashboard data:", error);
+      } finally {
+        hideLoading();
+      }
+    };
+
+    loadNotes();
   }, []);
+
   const ref = useRef(null);
   const refClose = useRef(null);
   const [note, setnote] = useState({
