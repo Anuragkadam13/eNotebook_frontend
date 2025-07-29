@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { ThemeProvider } from "@/components/theme-provider";
 import LoaderState from "./context/Loader/LoaderState";
+import Loader from "./components/Loader";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <LoaderState>
           <NoteState>
             <Navbar />
+            <Loader />
             <div className="px-5 pt-20">
               <Routes>
                 <Route path="/" element={<Home />} />
