@@ -23,7 +23,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="fixed w-full z-50">
+    <div className="fixed w-full">
       <nav className="px-5 py-2 flex items-center justify-between font-medium shadow bg-white dark:bg-[#0A0A0A] dark:border-b">
         <div className="flex items-center gap-1 ">
           <img src={logo} className="h-12 md:h-14" alt="" />
@@ -40,10 +40,10 @@ const Navbar = () => {
                   <X className="w-fit h-7" />
                 )}
               </PopoverTrigger>
-              <PopoverContent className="z-60">
+              <PopoverContent>
                 <div className="w-full ">
-                  <About className="z-70" />
-                  <ModeToggle className="z-70" />
+                  <About />
+                  <ModeToggle />
                   <Button
                     className="hover:cursor-pointer w-full justify-start "
                     variant="ghost"
